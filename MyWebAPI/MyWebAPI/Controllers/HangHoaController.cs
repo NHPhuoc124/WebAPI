@@ -14,7 +14,15 @@ namespace MyWebAPI.Controllers
         [HttpGet]
         public IActionResult GetAll()
         {
-            return Ok(HangHoas);
+            try
+            {
+
+                return Ok(HangHoas);
+            }
+            catch
+            {
+                return BadRequest();
+            }
         }
 
         [HttpGet("{id}")]
