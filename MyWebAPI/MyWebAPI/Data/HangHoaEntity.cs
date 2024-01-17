@@ -20,5 +20,11 @@ namespace MyWebAPI.Data
         public int? MaLoai { set; get; }
         [ForeignKey("MaLoai")]
         public LoaiEntity Loai { set; get; }
+        public ICollection<ChiTietDonHangEntity> ChiTietDonHangs { get; set; }
+
+        public HangHoaEntity()
+        {
+            ChiTietDonHangs = new List<ChiTietDonHangEntity>();
+        }
     }
 }
